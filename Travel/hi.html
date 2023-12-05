@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 1000px;
+        max-width: 100%;
+        margin: auto;
+    }
+    .nav-tabs{
+        background-image: linear-gradient(to bottom right, #25AEB8, #0ddb9f);
+        padding: 0;
+        margin: 50px 0 0;
+        list-style: none;
+        display: flex;
+        max-width: fit-content;
+        border-top-left-radius:20px;
+        border-top-right-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    .nav-item{
+        font-weight: bold;
+        font-size: 20px;
+        padding: 20px;
+        width: 80px;
+        text-align: center;
+        border-right: 1px solid #1d868d;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .nav-item:nth-last-child(1){
+        border-right:none ;
+    }
+    .nav-item.active{
+        color: #555;
+    }
+    .bg-active{
+        background-color: #eee;
+        padding: 20px;
+        width: 80px;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .content-tab{
+        padding: 30px;
+        background-color: #eee;
+        color: #555;
+        max-height: 300px;
+        text-align: justify;
+    }
+    .content-tab .tab{
+        display: none;
+    }
+    .content-tab .tab.active{
+        display: block;
+        animation: showcontent 0.5s ease-in-out 1;
+    }
+    @keyframes showcotent{
+        from{
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="sliderTab">
+            <ul class="nav-tabs">
+                <li class="nav-item active" data-target="tab1">Tab 1</li>
+                <li class="nav-item" data-target="tab2">Tab 2</li>
+                <li class="nav-item" data-target="tab3">Tab 3</li>
+                <div class="bg-active"></div>
+              
+              
+            </ul>
+            <div class="content-tab">
+                <div class="tab active" id="tab1">
+                    <h1>
+                        Content tab1
+                    </h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam impedit, id harum veritatis quam quia ab ex totam nemo reprehenderit, soluta quae architecto nobis. Assumenda, sapiente beatae! Est, iusto aut!
+                </div>
+                <div class="tab" id="tab2">
+                    <h1>
+                        Content tab2
+                    </h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam impedit, id harum veritatis quam quia ab ex totam nemo reprehenderit, soluta quae architecto nobis. Assumenda, sapiente beatae! Est, iusto aut!
+                </div>
+                <div class="tab" id="tab3">
+                    <h1>
+                        Content tab3
+                    </h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam impedit, id harum veritatis quam quia ab ex totam nemo reprehenderit, soluta quae architecto nobis. Assumenda, sapiente beatae! Est, iusto aut!
+                </div>
+            </div>
+    </div>
+    </div>
+    <script src="hi.js"></script>
+</body>
+
+</html> 
+

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Serif:ital,wght@0,700;1,400&display=swap");
+    :root {
+      --white: #fff;
+      --light: #eeeded;
+      --orage: #ffa16c;
+    }
+  
+    body {
+      background-color: var(--orage);
+      font-family: system-ui;
+    }
+    /******** Start Container ********/
+    .container {
+      width: 1200px;
+      border: 1px solid var(--white);
+      max-width: 100%;
+      margin: 50px auto 0;
+      display: grid;
+      grid-template-columns: 200px auto 300px;
+      padding: 20px;
+      border-radius: 30px;
+      min-height: 80vh;
+    }
+    .container .menu {
+      background-color: var(--white);
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+    .container .center {
+      background-color: var(--light);
+    }
+    .container .cart {
+      background-color: var(--white);
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+    /******** End Container ********/
+
+    /******** Start Menu ********/
+    .menu .logo {
+      padding: 20px;
+      font-family: "Lobster", cursive;
+      font-size: xx-large;
+      height: 40px;
+    }
+    .menu .logo span {
+      color: var(--orage);
+    }
+    .menu ul {
+      padding: 20px 0 20px 20px;
+      list-style: none;
+      border-bottom: 1px solid var(--light);
+    }
+    .menu ul li {
+      padding: 10px 0px;
+    }
+    .menu ul li i {
+      margin-right: 12px;
+    }
+    .menu ul li.active {
+      color: var(--orage);
+      border-right: 2px soild var(--orange);
+    }
+    /******** End Menu ********/
+
+    /******** Start Center ********/
+    /******** Start Form ********/
+    .center .search {
+      background-color: var(--white);
+      padding: 20px;
+      height: 40px;
+    }
+    .centet .search .form {
+      width: max-content;
+      border: 1px soild var(--light);
+      border-radius: 20px;
+      padding-left: 15px;
+      color: var(--light);
+    }
+    .center .search .form input {
+      border: none;
+      padding: 0 20px;
+      outline: none;
+    }
+    .center .search .form button {
+      border: none;
+      background-color: var(--orage);
+      color: var(--light);
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+    /******** End Form ********/
+    .center h2 {
+      padding: 20px;
+    }
+    .center .list {
+      padding: 0 20px 20px;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+    .item{
+        background-color: var(--white);
+        display: grid;
+        grid-template-columns: 20% auto;
+        padding:10px;
+        column-gap: 20px;
+        border-radius: 20px;
+        border-radius: 20px;
+    }
+    .item .img img{
+        height: 80px;
+    }
+    .item .img{
+        background-color: var(--light);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .item .content .title{
+        font-weight: bold;
+    }
+    .item .content .des{
+        font-size: small;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+    .item .content .price{
+        color: var(--orage);
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: small;
+        margin-top: 5px;
+    }
+    .item .count{
+        width: 50px;
+        border-radius: 10px;
+        margin-right: 10px;
+        padding: 3px 5px;
+
+    }
+    .item  .add{
+        margin-top: 5px;
+        background-color: var(--orage);
+        color: var(--white);
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+    }
+    .item .remove{
+        padding: 5px;
+        border: none;
+        margin-top:5px;
+        border-radius: 10px;
+        display: none;
+    }
+    /******** End Center ********/
+    .cart .item{
+      transition: 0.5s;
+      border-bottom: 1px solid var(--light);
+    }
+    .cart .name{
+      padding: 20px;
+      height: 40px;
+      font-weight: bold;
+      font-size: xx-large;
+      border-bottom:1px solid var(--light);
+    }
+    .danger{
+      box-shadow: 0 10px 10px var(--orage);
+      transform: translate(0 , -10px);
+    }
+    .cart .add{
+      display: none;
+    }
+    .cart .remove{
+      display: inline-block!important;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="logo">Truong<span>Cute</span></div>
+        <ul>
+          <li><i class="fa-solid fa-house-user"></i>Home</li>
+          <li><i class="fa-solid fa-user"></i>user</li>
+          <li><i class="fa-solid fa-heart"></i>favourite</li>
+        </ul>
+        <ul>
+          <li><i class="fa-brands fa-tiktok"></i>Tiktok</li>
+          <li><i class="fa-brands fa-facebook"></i>Facebook</li>
+          <li><i class="fa-brands fa-instagram"></i>Instagram</li>
+        </ul>
+      </div>
+      <div class="center">
+        <div class="search">
+          <div class="form">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search....." />
+            <button>Search</button>
+          </div>
+        </div>
+        <h2>Products</h2>
+        <div class="list">
+          <div class="item" data-key="1">
+            <div class="img">
+              <img src="/img/10.jpg" alt="" />
+            </div>
+            <div class="title">Product name</div>
+            <div class="des">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+             
+            </div>
+            <div class="price">$20.00</div>
+            <input type="number" class="count" min="1" value="1" />
+            <button class="add">Add to cart</button>
+            <button class="remove" onclick="Remove(1)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+
+          <div class="item" data-key="2">
+            <div class="img">
+              <img src="/img/9.jpg" alt="" />
+            </div>
+            <div class="title">Product name</div>
+            <div class="des">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+             
+            </div>
+            <div class="price">$20.00</div>
+            <input type="number" class="count" min="1" value="1" />
+            <button class="add">Add to cart</button>
+            <button class="remove" onclick="Remove(2)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+
+          <div class="item" data-key="3">
+            <div class="img">
+              <img src="/img/11.jpg" alt="" />
+            </div>
+            <div class="title">Product name</div>
+            <div class="des">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+            
+            </div>
+            <div class="price">$20.00</div>
+            <input type="number" class="count" min="1" value="1" />
+            <button class="add">Add to cart</button>
+            <button class="remove" onclick="Remove(3)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="item" data-key="4">
+            <div class="img">
+              <img src="/img/12.jpg" alt="" />
+            </div>
+            <div class="title">Product name</div>
+            <div class="des">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+           
+            </div>
+            <div class="price">$20.00</div>
+            <input type="number" class="count" min="1" value="1" />
+            <button class="add">Add to cart</button>
+            <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="cart">
+        <div class="name">Cart</div>
+        <div class="listCart">
+
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      let list = document.querySelectorAll('.list .item');
+      list.forEach(item =>{
+        item.addEventListener('click', function(event){
+          if(event.target.classList.contains('add')){
+            var itemNew = item.cloneNode(true);
+            let checkIsset = false;
+
+            let listCart = document.querySelectorAll('.cart .item');
+            listCart.forEach(cart =>{
+              if(cart.getAttribute('data-key') == itemNew.getAttribute('data-key')){
+                checkIsset = true;
+                cart.classList.add('danger');
+                setTimeout(function(){
+                  cart.classList.remove('danger');
+                },1000)
+              }
+            })
+            if(checkIsset == false){
+                document.querySelector('.listCart').appendChild(itemNew);
+              }
+          }
+        })
+      })
+      function Remove($key){
+        let listCart = document.querySelectorAll('.cart .item');
+        listCart.forEach(item =>{
+          if(item.getAttribute('data-key') == $key){
+            item.remove();
+            return;
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

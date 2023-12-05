@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    li{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="container">
+        <ul>
+            <li data-value="ahihi">Tab 1</li>
+            <li data-value="ahoho">Tab 2</li>
+            <li data-value="nono"> Tab 3</li>
+            <li data-value="hihi"> Tab 4</li>
+        </ul>
+
+        <div class="content">
+           
+                <p class="ahihi">Tab 1 ipsum dolor sit amet, consectetur adipisicing elit. Ut blanditiis officia, quas perferendis maiores fuga reprehenderit praesentium minima veritatis ullam alias, exercitationem eius est autem saepe quod delectus doloremque id.</p>
+           
+                <p class="ahoho">Tab 2 ipsum dolor sit amet consectetur adipisicing elit. Consectetur, officiis eaque. Saepe, quidem doloremque. Officia saepe eveniet voluptates non officiis vero minima excepturi explicabo, eius a accusamus necessitatibus cum praesentium.</p>
+           
+                <p class="nono">Tab 3 ipsum dolor sit amet consectetur adipisicing elit. Consectetur, officiis eaque. Saepe, quidem doloremque. Officia saepe eveniet voluptates non officiis vero minima excepturi explicabo, eius a accusamus necessitatibus cum praesentium.</p>
+           
+                <p class="hihi">Tab 4 ipsum dolor sit amet consectetur adipisicing elit. Consectetur, officiis eaque. Saepe, quidem doloremque. Officia saepe eveniet voluptates non officiis vero minima excepturi explicabo, eius a accusamus necessitatibus cum praesentium.</p>
+           
+        </div>
+      
+    </div>
+ 
+</body>
+<script>
+    $(document).ready(function(){
+    
+       
+        $("ul li").click(function(){
+            $(".content > p").hide();
+            $($(this).data("value")).fadeIn();
+        });
+    });
+   
+</script>
+</html>
